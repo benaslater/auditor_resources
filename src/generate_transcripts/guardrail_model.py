@@ -93,13 +93,11 @@ class GuardrailAwareOpenRouterAPI(OpenRouterAPI):
             )
 
 
-# TODO(organization): this class is only consumed by `runner.py`, for the
-# auditor across the whole recreation-audit experiment — not for transcript
-# generation. It lives here purely because `GuardrailAwareOpenRouterAPI`
-# above does. Belongs alongside `provider_defaults.py` (shared
-# provider-resilience infra used by both `runner.py` and
-# `generate_transcripts/__main__.py`) rather than nested inside this
-# resource-specific subpackage. Left as-is during active data collection.
+# Only `runner.py` uses this class, for the auditor in the audit experiment,
+# not for transcript generation. It lives here beside
+# `GuardrailAwareOpenRouterAPI`, which it shares its detection with, and the
+# registered provider name `openrouter_guardrail_auditor` appears in the
+# released audit logs, so moving it would need the name kept.
 @modelapi(name="openrouter_guardrail_auditor")
 class AuditorGuardrailOpenRouterAPI(OpenRouterAPI):
     """`OpenRouterAPI`, except a provider-side content block fails the sample.

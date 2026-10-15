@@ -22,8 +22,7 @@ Why a tarball rather than `git clone` for the real ones:
 history — typically an order of magnitude smaller (a small library: ~0.4MB vs
 ~13MB cloned; ansible/ansible: ~6MB vs ~265MB) — and it leaves no `.git` directory,
 which matters twice over here. A nested `.git` would land the checkout in the
-outer repo as an embedded git repo (a trap this project already hit once, see
-README "Previously: a benchmark-based data layer"), and the auditor's resource
+outer repo as an embedded git repo, and the auditor's resource
 tools would otherwise expose commit history that the deployment being simulated
 would not have. The synthetic sources are stored without a `.git` for the same
 two reasons.
