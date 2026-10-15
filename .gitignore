@@ -6,30 +6,17 @@ __pycache__/
 .ipynb_checkpoints/
 
 # Fetched source trees. Regenerable on demand from data/repos.json (every
-# entry is pinned to a commit, so a checkout is reproducible), large, and
-# carrying their own upstream licences — so never committed. One rule, not
-# one per repo: adding a repo to the manifest must not need a gitignore edge
-# case. `src/repos.py` extracts a tarball rather than cloning, so no .git
-# lands here either — the README records the embedded-git-repo trap this
-# project hit once already.
+# entry is pinned, so a checkout is reproducible), and carrying their own
+# upstream licences — so never committed. `src/repos.py` extracts a tarball
+# rather than cloning, so no .git lands here either.
 data/checkouts/
 
 # The Kissane et al. deployment-resource bundle: eleven upstream repos plus
-# their prompt/tool collections, gigabytes in total, and reproducible from the
-# commit `src/kissane_replication/kissane_resources.py` pins. Same rule and same reasoning as
-# data/checkouts/ above — the pin is committed, the tree is not.
+# their prompt and tool collections, gigabytes in total, and reproducible from
+# the commit `src/kissane_replication/kissane_resources.py` pins.
 data/kissane_resources/
 
-# Run outputs are regenerable and large
+# The dataset: audit logs and benchmark collections, downloaded from Hugging
+# Face by scripts/download_data.py (see README "Data").
 logs/
-
-# Runs from the benchmark-era pipeline, kept because — unlike logs/ — they are
-# NOT regenerable: the code that produced them was deleted in the repos swap
-# (see README "Previously"). Reproducing one means checking out that commit and
-# paying for the benchmark evals again. Several figures currently in the paper
-# are derived from these.
-logs_archive/
-
-paper/
-poster/
 data/transcripts/
