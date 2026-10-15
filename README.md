@@ -331,9 +331,9 @@ Unlike `logs/`, **these are not regenerable** — the code that produced them wa
 
 The paper ([arXiv:2610.16911](https://arxiv.org/abs/2610.16911)) is licensed CC BY-SA 4.0. This repository and its dataset are licensed separately:
 
-- **Code** — everything in this repository except `figures/`, including the synthetic repo in `data/synthetic_repos/` — is released under the MIT License.
-- **Our own data and figures** — `figures/`, and the logs and benchmark collections in the dataset, to the extent they are our own work — are released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-- **Third-party material** keeps its own terms, which take precedence over the above for that material:
+- **Code** — everything in this repository except `figures/` and `dataset/`, including the synthetic repo in `data/synthetic_repos/` — is released under the MIT License ([`LICENSE`](LICENSE)).
+- **Our own data and figures** — `figures/`, and the logs and benchmark collections in the dataset, to the extent they are our own work — are released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) ([`figures/LICENSE`](figures/LICENSE), [`dataset/LICENSE`](dataset/LICENSE)). `dataset/` holds the licence files published with the Hugging Face dataset.
+- **Third-party material** keeps its own terms, which take precedence over the above for that material. Full notices are in [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) for the code and in [`dataset/LICENSE`](dataset/LICENSE) for the dataset:
 
 | Material | Where it appears | Source | Terms |
 |---|---|---|---|
