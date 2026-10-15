@@ -57,7 +57,8 @@ MODEL_ROUTING = {
     # DigitalOcean is stable (5/5) but declares no quantization, so the weights
     # served are an uncontrolled axis for this judge alone. `allow_fallbacks`
     # still fixes the *provider*, and `record_judge` writes the routing into
-    # each log, so it is reported rather than assumed — see `collection_status.md`.
+    # each log, so it is reported as "DigitalOcean, quantization undeclared"
+    # rather than as pinned weights.
     "moonshotai/kimi-k3": {**PROVIDER_ROUTING, "order": ["digitalocean"]},
     # Alternates: glm-5.2 StreamLake or Fireworks. minimax-m2.5 has none.
     "z-ai/glm-5.2": {**PROVIDER_ROUTING, "order": ["sail-research"], "quantizations": ["fp8"]},
