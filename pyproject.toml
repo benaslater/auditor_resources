@@ -10,6 +10,7 @@ requires-python = ">=3.12,<3.14"
 # impossiblebench the reward-hacking one, for data/transcripts/; both are
 # pinned to the commits those collections ran at.
 dependencies = [
+    "huggingface-hub>=1.16.1",
     "impossiblebench",
     "inspect-ai==0.3.247",
     "inspect-evals",

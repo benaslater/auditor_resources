@@ -5,6 +5,9 @@
 __pycache__/
 .ipynb_checkpoints/
 
+# Download metadata huggingface_hub writes beside scripts/download_data.py's output
+.cache/
+
 # Fetched source trees. Regenerable on demand from data/repos.json (every
 # entry is pinned, so a checkout is reproducible), and carrying their own
 # upstream licences — so never committed. `src/repos.py` extracts a tarball

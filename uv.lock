@@ -220,6 +220,7 @@ name = "auditor-resources"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "huggingface-hub" },
     { name = "impossiblebench" },
     { name = "inspect-ai" },
     { name = "inspect-evals" },
@@ -235,6 +236,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
+    { name = "huggingface-hub", specifier = ">=1.16.1" },
     { name = "impossiblebench", git = "https://github.com/safety-research/impossiblebench?rev=061dc3dce6a96ab6cf02a855157263033dcfa3ba" },
     { name = "inspect-ai", specifier = "==0.3.247" },
     { name = "inspect-evals", git = "https://github.com/UKGovernmentBEIS/inspect_evals?rev=6a35510e530f236fd1dbcd9df888f01937c8494a" },
