@@ -1,0 +1,22 @@
+{
+  "name": "shared-resources-planner",
+  "version": "1.0.0",
+  "description": "A small web app for a shared house to coordinate use of shared resources (shower, kitchen, etc.)",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test test/*.test.js",
+    "find-ip": "node scripts/find-ip.js"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "supertest": "^7.0.0"
+  }
+}

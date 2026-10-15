@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shared Resources Planner</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <h1 id="house-name">Shared Resources Planner</h1>
+  <div class="whoami">
+    <label for="user-select">I am</label>
+    <select id="user-select"></select>
+  </div>
+</header>
+
+<nav class="resource-tabs" id="resource-tabs" aria-label="Resources"></nav>
+
+<main>
+  <div class="week-nav">
+    <button id="prev-week" class="btn-ghost" type="button">&larr; Prev</button>
+    <div class="week-label" id="week-label"></div>
+    <button id="today" class="btn-ghost" type="button">Today</button>
+    <button id="next-week" class="btn-ghost" type="button">Next &rarr;</button>
+    <button id="new-booking-btn" class="btn-primary" type="button">+ New booking</button>
+  </div>
+
+  <div class="calendar-wrap">
+    <div id="calendar" class="calendar"></div>
+  </div>
+
+  <section class="my-bookings">
+    <h2>My upcoming bookings</h2>
+    <ul id="my-bookings-list"></ul>
+  </section>
+</main>
+
+<div id="modal-backdrop" class="modal-backdrop hidden">
+  <form id="booking-form" class="modal">
+    <h2>New booking</h2>
+    <p class="form-error hidden" id="form-error"></p>
+
+    <label>
+      Resource
+      <select id="f-resource" required></select>
+    </label>
+
+    <label>
+      Who
+      <select id="f-user" required></select>
+    </label>
+
+    <fieldset class="type-choice">
+      <legend>When</legend>
+      <label class="radio"><input type="radio" name="type" value="once" checked> One-off date</label>
+      <label class="radio"><input type="radio" name="type" value="recurring"> Repeats weekly</label>
+    </fieldset>
+
+    <label id="once-date-wrap">
+      Date
+      <input type="date" id="f-date">
+    </label>
+
+    <div id="recurring-wrap" class="hidden">
+      <fieldset class="days-choice">
+        <legend>Days of the week</legend>
+        <label class="day-checkbox"><input type="checkbox" value="1"> Mon</label>
+        <label class="day-checkbox"><input type="checkbox" value="2"> Tue</label>
+        <label class="day-checkbox"><input type="checkbox" value="3"> Wed</label>
+        <label class="day-checkbox"><input type="checkbox" value="4"> Thu</label>
+        <label class="day-checkbox"><input type="checkbox" value="5"> Fri</label>
+        <label class="day-checkbox"><input type="checkbox" value="6"> Sat</label>
+        <label class="day-checkbox"><input type="checkbox" value="0"> Sun</label>
+      </fieldset>
+      <div class="two-col">
+        <label>
+          From (optional)
+          <input type="date" id="f-start-date">
+        </label>
+        <label>
+          Until (optional)
+          <input type="date" id="f-end-date">
+        </label>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <label>
+        Start time
+        <input type="time" id="f-start-time" required>
+      </label>
+      <label>
+        End time
+        <input type="time" id="f-end-time" required>
+      </label>
+    </div>
+
+    <label>
+      Note (optional)
+      <input type="text" id="f-note" maxlength="500" placeholder="e.g. leaving for work at 8, cooking for friends">
+    </label>
+
+    <div id="conflict-box" class="conflict-box hidden">
+      <p><strong>Heads up:</strong> this overlaps with:</p>
+      <ul id="conflict-list"></ul>
+      <label class="radio"><input type="checkbox" id="f-force"> Book anyway (let them know in person!)</label>
+    </div>
+
+    <div class="modal-actions">
+      <button type="button" id="cancel-booking" class="btn-ghost">Cancel</button>
+      <button type="submit" class="btn-primary">Save booking</button>
+    </div>
+  </form>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
