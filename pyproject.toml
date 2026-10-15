@@ -1,5 +1,5 @@
 [project]
-name = "auditor-drift"
+name = "auditor-resources"
 version = "0.1.0"
 # <3.14: inspect_scout (via inspect-petri) uses typing forms removed in 3.14
 requires-python = ">=3.12,<3.14"
