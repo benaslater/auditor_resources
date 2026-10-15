@@ -12,14 +12,27 @@ resolution-markers = [
 
 [[package]]
 name = "agent-client-protocol"
-version = "0.12.1"
+version = "0.11.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "pydantic" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/9d/95/2c28ca34e545ce0282e88272aa3a8abdf8f3f926a0492f567ea11acd071b/agent_client_protocol-0.12.1.tar.gz", hash = "sha256:9963ccb590ed96d7dc542c9c023e90676fc76b1c6562e21a9ee112f4fbcb0095", size = 130605, upload-time = "2026-08-16T14:08:22.545Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/6c/93/396d02c91b387b2678f23081869ca47bd495fc6c78789022c683180cf5f1/agent_client_protocol-0.11.0.tar.gz", hash = "sha256:8920a3b27bdcc852fd7c73066f47ab53257dbfbe57b505e20a40c69f80a5391c", size = 87402, upload-time = "2026-07-05T17:07:56.803Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/21/61/0a2186c8ca53cf464767d4c4fb7fd9e23f48ce4547c2fa0d1c83a4d52410/agent_client_protocol-0.12.1-py3-none-any.whl", hash = "sha256:aaf3cc301ed87d9e2c4ccb91adfe1cd58784355f6ce7e513f50e7ca2391862ef", size = 85929, upload-time = "2026-08-16T14:08:21.307Z" },
+    { url = "https://files.pythonhosted.org/packages/a0/48/a1367dded7765f5489f9840389949d5aeac53a73aeb1b4e6c0ab61e1617a/agent_client_protocol-0.11.0-py3-none-any.whl", hash = "sha256:2d8570cd4911f8af9fbab4808f7b05f09204a756f346c7409ecdcae3f37cdb2f", size = 68089, upload-time = "2026-07-05T17:07:55.518Z" },
+]
+
+[[package]]
+name = "aioboto3"
+version = "15.5.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "aiobotocore", extra = ["boto3"] },
+    { name = "aiofiles" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/a2/01/92e9ab00f36e2899315f49eefcd5b4685fbb19016c7f19a9edf06da80bb0/aioboto3-15.5.0.tar.gz", hash = "sha256:ea8d8787d315594842fbfcf2c4dce3bac2ad61be275bc8584b2ce9a3402a6979", size = 255069, upload-time = "2025-10-30T13:37:16.122Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/e5/3e/e8f5b665bca646d43b916763c901e00a07e40f7746c9128bdc912a089424/aioboto3-15.5.0-py3-none-any.whl", hash = "sha256:cc880c4d6a8481dd7e05da89f41c384dbd841454fc1998ae25ca9c39201437a6", size = 35913, upload-time = "2025-10-30T13:37:14.549Z" },
 ]
 
 [[package]]
@@ -38,6 +51,20 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/62/94/2e4ec48cf1abb89971cb2612d86f979a6240520f0a659b53a43116d344dc/aiobotocore-2.25.1.tar.gz", hash = "sha256:ea9be739bfd7ece8864f072ec99bb9ed5c7e78ebb2b0b15f29781fbe02daedbc", size = 120560, upload-time = "2025-10-28T22:33:21.787Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/95/2a/d275ec4ce5cd0096665043995a7d76f5d0524853c76a3d04656de49f8808/aiobotocore-2.25.1-py3-none-any.whl", hash = "sha256:eb6daebe3cbef5b39a0bb2a97cffbe9c7cb46b2fcc399ad141f369f3c2134b1f", size = 86039, upload-time = "2025-10-28T22:33:19.949Z" },
+]
+
+[package.optional-dependencies]
+boto3 = [
+    { name = "boto3" },
+]
+
+[[package]]
+name = "aiofiles"
+version = "25.1.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/41/c3/534eac40372d8ee36ef40df62ec129bee4fdb5ad9706e58a29be53b2c970/aiofiles-25.1.0.tar.gz", hash = "sha256:a8d728f0a29de45dc521f18f07297428d56992a742f0cd2701ba86e44d23d5b2", size = 46354, upload-time = "2025-10-09T20:51:04.358Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/bc/8a/340a1555ae33d7354dbca4faa54948d76d89a27ceef032c8c3bc661d003e/aiofiles-25.1.0-py3-none-any.whl", hash = "sha256:abe311e527c862958650f9438e859c1fa7568a141b22abcd015e120e86a85695", size = 14668, upload-time = "2025-10-09T20:51:03.174Z" },
 ]
 
 [[package]]
@@ -208,10 +235,10 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "impossiblebench", git = "https://github.com/safety-research/impossiblebench" },
-    { name = "inspect-ai", specifier = ">=0.3.277" },
-    { name = "inspect-evals", git = "https://github.com/UKGovernmentBEIS/inspect_evals" },
-    { name = "inspect-petri", specifier = ">=3.0.11" },
+    { name = "impossiblebench", git = "https://github.com/safety-research/impossiblebench?rev=061dc3dce6a96ab6cf02a855157263033dcfa3ba" },
+    { name = "inspect-ai", specifier = "==0.3.247" },
+    { name = "inspect-evals", git = "https://github.com/UKGovernmentBEIS/inspect_evals?rev=6a35510e530f236fd1dbcd9df888f01937c8494a" },
+    { name = "inspect-petri", specifier = "==3.0.11" },
     { name = "ipykernel", specifier = ">=7.3.0" },
     { name = "krippendorff", specifier = ">=0.8.2" },
     { name = "matplotlib", specifier = ">=3.11.0" },
@@ -992,7 +1019,7 @@ wheels = [
 [[package]]
 name = "impossiblebench"
 version = "0.1.0"
-source = { git = "https://github.com/safety-research/impossiblebench#061dc3dce6a96ab6cf02a855157263033dcfa3ba" }
+source = { git = "https://github.com/safety-research/impossiblebench?rev=061dc3dce6a96ab6cf02a855157263033dcfa3ba#061dc3dce6a96ab6cf02a855157263033dcfa3ba" }
 dependencies = [
     { name = "datasets" },
     { name = "inspect-ai" },
@@ -1006,11 +1033,11 @@ dependencies = [
 
 [[package]]
 name = "inspect-ai"
-version = "0.3.277"
+version = "0.3.247"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "agent-client-protocol" },
-    { name = "aiobotocore" },
+    { name = "aioboto3" },
     { name = "anyio" },
     { name = "beautifulsoup4" },
     { name = "boto3" },
@@ -1026,7 +1053,6 @@ dependencies = [
     { name = "jsonpath-ng" },
     { name = "jsonref" },
     { name = "jsonschema" },
-    { name = "markdown-it-py" },
     { name = "mmh3" },
     { name = "nest-asyncio2" },
     { name = "numpy" },
@@ -1050,9 +1076,9 @@ dependencies = [
     { name = "zipp" },
     { name = "zstandard" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/9c/44/78435c7f526e2997ac78fad423411169d8531fb91f60c85e1a7fad44d5c5/inspect_ai-0.3.277.tar.gz", hash = "sha256:3e9b01201d4a483829bf4d092b3b8665bc4108258ac8bd043c4fa090f067349c", size = 36125842, upload-time = "2026-10-06T21:36:12.47Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/e5/a6/f9c09024a8f7de34d0b8eb301195748ed838e22823efc36a1d054d7e2194/inspect_ai-0.3.247.tar.gz", hash = "sha256:dac7524c44c9009e362f1197ca1482b3d374f84f044fef3bfab389189b26d9cc", size = 49304456, upload-time = "2026-07-16T12:22:11.711Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/1d/99/e11f713fb0c7b3b43c108b15664dddafec9edbf7c5c2b28aa1a949293c51/inspect_ai-0.3.277-py3-none-any.whl", hash = "sha256:4a8a3174db942db4756253acb07ceff8d931dc27dedef817839785157004eada", size = 34938728, upload-time = "2026-10-06T21:36:02.607Z" },
+    { url = "https://files.pythonhosted.org/packages/44/7e/76e2071c3a78456455e5a8938c6361f8de4dfa5ce0a1dde9ae8c303119a1/inspect_ai-0.3.247-py3-none-any.whl", hash = "sha256:3a3f7c29445b19b9f8eb9a9c7fcef81085729a80603c48ab7ba521f3460a80ce", size = 36849872, upload-time = "2026-07-16T12:22:03.649Z" },
 ]
 
 [[package]]

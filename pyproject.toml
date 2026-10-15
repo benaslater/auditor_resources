@@ -3,18 +3,17 @@ name = "auditor-resources"
 version = "0.1.0"
 # <3.14: inspect_scout (via inspect-petri) uses typing forms removed in 3.14
 requires-python = ">=3.12,<3.14"
-# inspect-harbor was dropped along with the benchmark data layer (see README
-# "Previously") — nothing imports its task registry now that scenarios come
-# from GitHub repos. inspect-evals is back, scoped to data/transcripts/ only,
-# for pulling task-level results from upstream Inspect evals — as is
-# impossiblebench, which supplies the reward-hacking benchmark and is an
-# Inspect implementation itself, so its logs need no special handling. Neither
-# is pinned here; uv.lock pins the resolved commit of both.
+# The Inspect stack is pinned exactly to what produced every log in the
+# released dataset (each .eval records its own package versions). Newer
+# inspect-ai needs openai>=3.4, which the code here is not tested against.
+# inspect-evals supplies the sycophancy and AgentHarm benchmarks, and
+# impossiblebench the reward-hacking one, for data/transcripts/; both are
+# pinned to the commits those collections ran at.
 dependencies = [
     "impossiblebench",
-    "inspect-ai>=0.3.277",
+    "inspect-ai==0.3.247",
     "inspect-evals",
-    "inspect-petri>=3.0.11",
+    "inspect-petri==3.0.11",
     "ipykernel>=7.3.0",
     "krippendorff>=0.8.2",
     "matplotlib>=3.11.0",
@@ -25,5 +24,5 @@ dependencies = [
 ]
 
 [tool.uv.sources]
-inspect-evals = { git = "https://github.com/UKGovernmentBEIS/inspect_evals" }
-impossiblebench = { git = "https://github.com/safety-research/impossiblebench" }
+inspect-evals = { git = "https://github.com/UKGovernmentBEIS/inspect_evals", rev = "6a35510e530f236fd1dbcd9df888f01937c8494a" }
+impossiblebench = { git = "https://github.com/safety-research/impossiblebench", rev = "061dc3dce6a96ab6cf02a855157263033dcfa3ba" }
